@@ -10,8 +10,8 @@ services:
       - "ConnectionStrings__DefaultConnection=Data Source=144.126.140.118;Initial Catalog=ShipPlan_local_20240202_DB;Integrated Security=True;MultipleActiveResultSets=True;User ID=sa;Password=abcABC123;TrustServerCertificate=True;Trusted_Connection=false;"
       # - "ASPNETCORE_Kestrel__Certificates__Default__Password=securePassword123"
       # - "ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx"
-    volumes:
-      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+    #volumes:
+    #  - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
       # - ~/.aspnet/https:/https:ro
     ports:
       # - "5005:5005"
