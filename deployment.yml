@@ -6,9 +6,9 @@ spec:
   selector:
     app: hero-pod
   ports:
-  - port: 5056
+  - port: 80
     protocol: TCP
-    targetPort: 5056
+    targetPort: 80
   type: NodePort
 
 ---
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: hero-container
-        image: pichayean/blazorhero:v1.0.1
+        image: pichayean/blazorhero:v1.0.2
         resources:
           limits:
             memory: "256Mi"
@@ -37,7 +37,7 @@ spec:
         - name: "ASPNETCORE_ENVIRONMENT"
           value: Production
         ports:
-        - containerPort: 5056
+        - containerPort: 80
           protocol: TCP
 
 ---
@@ -59,4 +59,4 @@ spec:
          service:
            name: hero-service
            port:
-             number: 5056
+             number: 80
