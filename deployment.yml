@@ -6,8 +6,8 @@ spec:
   selector:
     app: hero-pod
   ports:
-  - port: 5056
-    nodePort: 30056
+  - port: 5055
+    nodePort: 30055
     protocol: TCP
     targetPort: 5056
   type: NodePort
