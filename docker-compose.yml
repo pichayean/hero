@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  blazorhero:
+    image: pichayean/blazorhero:v1.0.1
+    build:
+      context: .
+      dockerfile: src/Server/Dockerfile
+    environment:
+      - "ConnectionStrings__DefaultConnection=Data Source=144.126.140.118;Initial Catalog=ShipPlan_local_20240202_DB;Integrated Security=True;MultipleActiveResultSets=True;User ID=sa;Password=abcABC123;TrustServerCertificate=True;Trusted_Connection=false;"
+      # - "ASPNETCORE_Kestrel__Certificates__Default__Password=securePassword123"
+      # - "ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx"
+    volumes:
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https
+      # - ~/.aspnet/https:/https:ro
+    ports:
+      # - "5005:5005"
+      - "5006:5006"
+    # depends_on:
+    #   - db
+    restart: on-failure
+    container_name: blazorhero
+
+  # db:
+  #   image: "mcr.microsoft.com/mssql/server"
+  #   environment:
+  #     - "SA_PASSWORD=Your_password123"
+  #     - "ACCEPT_EULA=Y"
+  #   container_name: mssql
