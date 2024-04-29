@@ -29,11 +29,11 @@ spec:
     spec:
       containers:
       - name: hero-container
-        image: pichayean/blazorhero:v1.0.0
+        image: pichayean/blazorhero:v1.0.1
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "50m"
+            memory: "256Mi"
+            cpu: "100m"
         env:
         - name: "ASPNETCORE_ENVIRONMENT"
           value: Production
