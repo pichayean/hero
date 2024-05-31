@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: hero-container
-        image: pichayean/blazorhero:v1.3.0
+        image: pichayean/blazorhero:v1.3.1
         resources:
           limits:
             memory: "256Mi"
